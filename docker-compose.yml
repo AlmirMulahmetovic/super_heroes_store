@@ -1,0 +1,12 @@
+version: "3.5"
+
+services:
+  api:
+    build: ./api
+    container_name: super-hero-api
+    environment:
+      - ENCRYPTION_KEY=5
+    volumes:
+      - ./api:/server
+    ports:
+      - "8000:8000"
