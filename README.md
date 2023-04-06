@@ -19,6 +19,8 @@ pytest tests
 # Testing
 In order to test heroes get route create GET request to:
 http://localhost:8000/heroes?encrypt_identity={val}&superpowers={val}&superpowers={val}
+
+
 Example:
 http://localhost:8000/heroes?encrypt_identity=False&superpowers=strength&superpowers=flight
 
