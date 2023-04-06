@@ -1,4 +1,4 @@
-# super_heroes_store
+# Super heroes store
 
 # Run the application
 In order to run application (assuming that you have Docker installed on your machine) from project root folder run:
@@ -18,7 +18,10 @@ pytest tests
 
 # Testing
 In order to test heroes get route create GET request to:
-http://localhost:8000/heroes?encrypt_identity={encrypt_identity_boolean_value}&superpowers={superpower_value_1}&superpowers={superpower_value_2}
+http://localhost:8000/heroes?encrypt_identity={val}&superpowers={val}&superpowers={val}
+Example:
+http://localhost:8000/heroes?encrypt_identity=False&superpowers=strength&superpowers=flight
+
 
 In order to test heroes post route create POST request to:
 http://localhost:8000/heroes/

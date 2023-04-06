@@ -1,8 +1,7 @@
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 
-from super_hero.enums import HeroSuperPowerEnum
 from super_hero.service import SuperHeroService
 
 
@@ -14,9 +13,7 @@ class TestSuperHeroService:
         )
         repository_save_hero_mock.assert_called_with(super_hero)
 
-    @pytest.mark.parametrize(
-        "superpowers", [None, [HeroSuperPowerEnum.HEALING, HeroSuperPowerEnum.SPEED]]
-    )
+    @pytest.mark.parametrize("superpowers", [None, MagicMock()])
     @patch("super_hero.repository.SuperHeroRepository.get_heroes_filtered_by_superpower")
     @patch("super_hero.repository.SuperHeroRepository.get_all_heroes")
     def test_get_super_heroes(
