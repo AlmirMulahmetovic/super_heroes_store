@@ -30,8 +30,8 @@ class TestSuperHeroRepository:
             result = SuperHeroRepository.get_heroes_filtered_by_superpower(
                 [HeroSuperPowerEnum.SPEED, HeroSuperPowerEnum.FLIGHT]
             )
-            assert super_hero_with_speed in result
-            assert super_hero_with_speed_and_healing in result
+            assert super_hero_with_speed not in result
+            assert super_hero_with_speed_and_healing not in result
             assert super_hero_with_speed_and_flight in result
-            assert super_hero_with_flight_and_strength in result
+            assert super_hero_with_flight_and_strength not in result
             assert super_hero_with_strength_invulnerability_and_healing not in result

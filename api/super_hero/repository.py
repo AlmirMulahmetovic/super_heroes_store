@@ -21,7 +21,7 @@ class SuperHeroRepository:
         return [
             hero
             for hero in cls._heroes
-            if any(superpower in hero.superpowers for superpower in superpowers)
+            if all(superpower in hero.superpowers for superpower in superpowers)
         ]
 
     @classmethod
