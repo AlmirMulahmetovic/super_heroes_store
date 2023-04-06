@@ -24,6 +24,10 @@ class SuperHeroIdentity:
     def last_name(self, value: str):
         self._last_name = value
 
+    @property
+    def full_name(self):
+        return f"{self._first_name} {self._last_name}"
+
     @classmethod
     def from_json(cls, data: dict[str, str]):
         return cls(
@@ -82,7 +86,7 @@ class SuperHero:
 
     @property
     def full_name(self):
-        return f"{self._identity.first_name} {self._identity.last_name}"
+        return self.identity.full_name
 
     @classmethod
     def from_json(cls, data: dict[str, str]):
